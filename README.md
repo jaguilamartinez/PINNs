@@ -9,8 +9,9 @@ Three notebooks implementing PINNs for classic 1D PDEs using PyTorch. The idea i
 | `burguers_equation.ipynb` | $u_t + u\,u_x = \nu\,u_{xx}$ | Via Cole–Hopf transform |
 | `wave_equation.ipynb` | $u_{tt} = c^2 u_{xx}$ | $\sin(\pi x)\cos(\pi ct)$ |
 | `heat_equation.ipynb` | $u_t = \alpha\,u_{xx}$ | $\sin(\pi x)\,e^{-\alpha\pi^2 t}$ |
+| `wave_equation_2d.ipynb` | $u_{tt} = c^2(u_{xx}+u_{yy})$ | $\sin(\pi x)\sin(\pi y)\cos(\pi\sqrt{2}\,ct)$ |
 
-**Burgers'** is the hardest — nonlinear, forms shocks, no closed-form you can just evaluate. **Wave** introduces a second-order time derivative, which means two initial conditions and an extra loss term for the velocity IC. **Heat** is the cleanest benchmark: linear, first-order in time, and the PINN converges fast.
+**Burgers'** is the hardest — nonlinear, forms shocks, no closed-form you can just evaluate. **Wave** introduces a second-order time derivative, which means two initial conditions and an extra loss term for the velocity IC. **Heat** is the cleanest benchmark: linear, first-order in time, and the PINN converges fast. **2D Wave** extends the membrane to two spatial dimensions, requiring three second-derivative autograd passes and four boundary conditions; it comes with a 3D animated visualization of the oscillating surface.
 
 ## How it works
 
